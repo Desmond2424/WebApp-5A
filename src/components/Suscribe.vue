@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <img alt="Vue logo" src="../assets/logo.png">
-    <p>Suscribe Page</p>
+    <p>Subscribe Page</p>
   </v-container>
 </template>
 
