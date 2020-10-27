@@ -5,7 +5,7 @@
    <v-card class="justify-center"> 
        <v-img
         class="white--text"
-        height="300px"
+        height="550px"
         src="https://cdn.pixabay.com/photo/2018/01/22/14/13/animal-3099035_1280.jpg"
       >
       <!-- <strong><v-card-title class="align-end black--text justify-center ">SIGN IN</v-card-title></strong> -->
@@ -25,14 +25,14 @@
         v-model="password"
         type="password"
         :rules="passwordRules"
-        label="Password"
+        label="Mot de passe"
         required>
       </v-text-field>
 
       <v-checkbox
         v-model="checkbox"
         :rules="checkboxRules"
-        label="Remember Me"
+        label="Se souvenir de moi"
         required>
       </v-checkbox>
       <v-btn small to="/subscribe">S'inscrire</v-btn>
@@ -53,8 +53,8 @@ export default {
       valid: true,
       email: '',
       emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+        v => !!v || 'Veuillez renseigner votre e-mail',
+        v => /.+@.+\..+/.test(v) || 'Veuillez respectez le format du courriel (exemple@domain.fr)'
       ],
       password: '',
       passwordRules: [ ],

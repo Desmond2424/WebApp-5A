@@ -5,8 +5,8 @@ import User from '@/components/User.vue'
 import Administrator from '@/components/Administrator.vue'
 import Monitor from '@/components/Monitor.vue'
 import Connexion from '@/components/Connexion.vue'
-import Suscribe from '@/components/Suscribe.vue'
 import Profil from '@/components/Profil.vue'
+import Subscribe from '@/components/Subscribe'
 
 Vue.use(VueRouter)
 
@@ -22,9 +22,9 @@ const routes = [
     component: Profil
   },
   {
-    path: '/suscribe',
-    name: 'Suscribe',
-    component: Suscribe
+    path: '/subscribe',
+    name: 'Subscribe',
+    component: Subscribe
   },
   {
     path: '/admin',
