@@ -1,8 +1,24 @@
 <template>
       <div id="app">
-        <router-view/>
+      <Sidebar v-if="shouldShowSidebar"></Sidebar> 
+      <router-view/>
       </div>
 </template>
+
+<script>
+import Sidebar from '@/components/Sidebar.vue'; 
+
+export default {
+  computed:{
+    shouldShowSidebar(){
+        return this.$route.meta.Sidebar!==false;
+    }
+  },
+  components: {
+    Sidebar
+  },
+};
+</script>
 
 <style lang="scss">
 #app {

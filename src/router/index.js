@@ -7,14 +7,21 @@ import Monitor from '@/components/Monitor.vue'
 import Connexion from '@/components/Connexion.vue'
 import Profil from '@/components/Profil.vue'
 import Subscribe from '@/components/Subscribe'
+import Home from '@/components/Home'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
+    meta:{Sidebar:false},
     name: 'Connexion',
     component: Connexion
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    component: Home
   },
   {
     path: '/profil',
@@ -23,6 +30,7 @@ const routes = [
   },
   {
     path: '/subscribe',
+    meta:{Sidebar:false},
     name: 'Subscribe',
     component: Subscribe
   },

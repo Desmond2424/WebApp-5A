@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <Sidebar v-if="shouldShowSidebar"></Sidebar> 
     <h1 class="pt-5 ContactTitle">Espace membre equestre</h1>
     <p class="grey--text">Connectez-vous à votre espace membre.</p>
    <v-card class="justify-center"> 
