@@ -19,20 +19,20 @@
                         hiddenOnCollapse: true
                     },
                     {
-                        href: '/',
-                        title: 'Connexion',
+                        href: '/home',
+                        title: 'Accueil',
                         icon: 'fa fa-user'
                     },
                     {
-                        href: '/subscribe',
-                        title: 'Inscription',
-                        icon: 'fa fa-chart-area',
-                        child: [
-                            {
-                                href: '/charts/sublink',
-                                title: 'Sub Link'
-                            }
-                        ]
+                        href: '/profil',
+                        title: 'Informations utilisateurs',
+                        icon: 'fa fa-chart-area'
+                    }
+                    ,
+                    {
+                        href: '/monitor',
+                        title: 'Gestion',
+                        icon: 'fa fa-chart-area'
                     }
                 ]
             }
