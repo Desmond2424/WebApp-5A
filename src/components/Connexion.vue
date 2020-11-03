@@ -1,5 +1,6 @@
 <template>
-  <v-container>
+<v-app>
+ <v-container>
     <Sidebar v-if="shouldShowSidebar"></Sidebar> 
     <h1 class="pt-5 ContactTitle">Espace membre equestre</h1>
     <p class="grey--text">Connectez-vous à votre espace membre.</p>
@@ -37,13 +38,14 @@
         required>
       </v-checkbox>
       <v-btn small to="/subscribe">S'inscrire</v-btn>
-      <v-btn small  :disabled="!valid" color="blue" class="mr-4" > Se connecter </v-btn>
+      <v-btn small  :disabled="!valid" color="green" class="mr-4" > Se connecter </v-btn>
       <br><br>
 
 
       </v-form>
     </v-card>
   </v-container>
+</v-app>
 </template>
 
 <script>

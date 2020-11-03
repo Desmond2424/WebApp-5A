@@ -1,4 +1,5 @@
 <template>
+<v-app>
   <v-container>
     <h1 class="pt-5 ContactTitle">Bienvenue ! Inscription au centre equestre.</h1>
     <p class="grey--text">Inscrivez-vous pour créer votre espace membre.</p>
@@ -72,7 +73,7 @@
         required>
       </v-text-field>
 
-     <v-btn small :disabled="!valid" color="success">Submit</v-btn>
+     <v-btn small :disabled="!valid">Submit</v-btn>
          <v-btn small  :disabled="!valid" color="blue" class="mr-4" @click="reset">Clear </v-btn>
 
       
@@ -82,6 +83,7 @@
     </v-card>
 
   </v-container>
+</v-app>
 </template>
 
 <script>
