@@ -44,7 +44,7 @@
                         icon: 'fa fa-chart-area'
                     },
                     {
-                        href: '/monitor',
+                        href: '/planning',
                         title: 'Planning de cours',
                         icon: 'fa fa-chart-area'
                     }

@@ -8,6 +8,7 @@ import Connexion from '@/components/Connexion.vue'
 import Profil from '@/components/Profil.vue'
 import Subscribe from '@/components/Subscribe'
 import Home from '@/components/Home'
+import Planning from '@/components/Planning'
 
 Vue.use(VueRouter)
 
@@ -49,6 +50,16 @@ const routes = [
     name: 'User',
     component: User
   },
+  {
+    path: '/planning',
+    name: 'Planning',
+    component: Planning
+  },
+  {
+    path: '/chevaux',
+    name: 'Chevaux',
+    component: User
+  }
 ]
 
 const router = new VueRouter({
