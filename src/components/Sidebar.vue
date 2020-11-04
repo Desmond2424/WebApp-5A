@@ -21,32 +21,37 @@
                     {
                         href: '/home',
                         title: 'Accueil',
-                        icon: 'fa fa-chart-area'
+                        icon: {
+                            element: 'span',
+                            class: 'fas fa-home',
+                            // attributes: {}
+                            // text: ''
+                        }
                     },
                     {
                         href: '/profil',
                         title: 'Informations utilisateurs',
-                        icon: 'fa fa-chart-area'
+                        icon: 'fa fa-user'
                     },
                     {
                         href: '/monitor',
                         title: 'Gestion des utilisateurs',
-                        icon: 'fa fa-chart-area'
+                        icon: 'fas fa-users-cog'
                     },
                     {
-                        href: '/monitor',
+                        href: '/chevaux',
                         title: 'Gestion des chevaux',
-                        icon: 'fa fa-chart-area'
+                        icon: 'fas fa-horse'
                     },
                     {
                         href: '/monitor',
                         title: 'Gestion des cours',
-                        icon: 'fa fa-chart-area'
+                        icon: 'fas fa-school'
                     },
                     {
                         href: '/planning',
                         title: 'Planning de cours',
-                        icon: 'fa fa-chart-area'
+                        icon: 'far fa-calendar-alt'
                     }
                 ]
             }

@@ -4,6 +4,8 @@ import vuetify from './plugins/vuetify';
 import router from './router'
 import VueSidebarMenu from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
+import '@fortawesome/fontawesome-free/css/all.css';
+import '@fortawesome/fontawesome-free/js/all.js';
 
 Vue.use(VueSidebarMenu)
 Vue.config.productionTip = false
