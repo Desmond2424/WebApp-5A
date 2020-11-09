@@ -74,7 +74,7 @@
       </v-text-field>
 
      <v-btn small :disabled="!valid">Submit</v-btn>
-         <v-btn small  :disabled="!valid" color="blue" class="mr-4" @click="reset">Clear </v-btn>
+    <v-btn small  :disabled="!valid" color="blue" class="mr-4" @click="reset">Clear </v-btn>
 
       
       <br><br>

@@ -9,6 +9,7 @@ import Profil from '@/components/Profil.vue'
 import Subscribe from '@/components/Subscribe'
 import Home from '@/components/Home'
 import Planning from '@/components/Planning'
+import Chevaux from '@/components/Chevaux'
 
 Vue.use(VueRouter)
 
@@ -46,8 +47,8 @@ const routes = [
     component: Monitor
   },
   {
-    path: '/user',
-    name: 'User',
+    path: '/users',
+    name: 'Users',
     component: User
   },
   {
@@ -58,7 +59,7 @@ const routes = [
   {
     path: '/chevaux',
     name: 'Chevaux',
-    component: User
+    component: Chevaux
   }
 ]
 

@@ -34,7 +34,7 @@
                         icon: 'fa fa-user'
                     },
                     {
-                        href: '/monitor',
+                        href: '/users',
                         title: 'Gestion des utilisateurs',
                         icon: 'fas fa-users-cog'
                     },

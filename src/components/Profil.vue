@@ -2,7 +2,7 @@
 <v-app>
   <div class="container">
      <v-card
-      class="mx-auto mt-10"
+      class="mx-auto mt-10 "
       max-width="600"
       tile
   >
