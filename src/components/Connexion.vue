@@ -38,7 +38,7 @@
         required>
       </v-checkbox>
       <v-btn small to="/subscribe">S'inscrire</v-btn>
-      <v-btn small  :disabled="!valid" color="green" class="mr-4" > Se connecter </v-btn>
+      <v-btn small  :disabled="!valid" color="green" class="mr-4" @click="login" > Se connecter </v-btn>
       <br><br>
 
 
@@ -75,6 +75,34 @@ export default {
       this.$refs.form.reset()
     },
     rememberMe () {
+    },
+    // Login back end
+    async login () {
+      var that = this
+      // connecter l'utilisateur
+      this.axios({
+        method: 'post',
+        url: this.url + '/api/login',
+        data: {
+          email: this.email,
+          password: this.password
+        }
+      })
+        .then(function (response) {
+        // On traite la suite une fois la réponse obtenue
+          const status = JSON.parse(response.data.status)
+          // redirect logic
+          // eslint-disable-next-line eqeqeq
+          if (status == '200') {
+            localStorage.setItem('email', that.email)
+            sessionStorage.clear()
+            that.$router.push('profil')
+          }
+        })
+        .catch(function (erreur) {
+          // On traite ici les erreurs éventuellement survenues
+          console.log(erreur)
+        })
     }
 }
 }
