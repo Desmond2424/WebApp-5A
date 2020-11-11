@@ -3,13 +3,13 @@ import VueRouter from 'vue-router'
 
 import User from '@/components/User.vue'
 import Administrator from '@/components/Administrator.vue'
-import Monitor from '@/components/Monitor.vue'
 import Connexion from '@/components/Connexion.vue'
 import Profil from '@/components/Profil.vue'
 import Subscribe from '@/components/Subscribe'
 import Home from '@/components/Home'
 import Planning from '@/components/Planning'
 import Chevaux from '@/components/Chevaux'
+import Courses from '@/components/Courses'
 
 Vue.use(VueRouter)
 
@@ -42,9 +42,9 @@ const routes = [
     component: Administrator
   },
   {
-    path: '/monitor',
-    name: 'Monitor',
-    component: Monitor
+    path: '/gestionDesCours',
+    name: 'Gestion des cours',
+    component: Courses
   },
   {
     path: '/users',

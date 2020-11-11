@@ -44,7 +44,7 @@
                         icon: 'fas fa-horse'
                     },
                     {
-                        href: '/monitor',
+                        href: '/gestionDesCours',
                         title: 'Gestion des cours',
                         icon: 'fas fa-school'
                     },
