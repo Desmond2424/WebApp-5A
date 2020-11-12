@@ -73,7 +73,7 @@
         required>
       </v-text-field>
 
-    <v-btn small  :disabled="!valid" color="green">Enregistrer</v-btn>
+    <v-btn small  :disabled="!valid" color="green" @click="Submit">Enregistrer</v-btn>
     <v-btn small  :disabled="!valid" class="mr-4" @click="reset">Clear </v-btn>
 
       
@@ -91,6 +91,7 @@ export default {
   data () {
     return {
       valid: true,
+      url: 'http://localhost:8080',
       email: '',
       emailRules: [
         v => !!v || 'Veuillez renseigner votre e-mail',
@@ -134,7 +135,30 @@ export default {
       this.$refs.form.reset()
     },
     rememberMe () {
-    }
+    },
+    async Submit () {
+      this.validate()
+      if (this.snackbar !== true) {
+        return
+      }
+      this.axios({
+        method: 'post',
+        url: this.url + '/api/subscribe',
+        data: {
+          email: this.email,
+          password: this.password,
+          Lastname: this.Lastname,
+          Firstname: this.Firstname,
+          phoneNumber: this.phoneNumber,
+          LicenseNumber: this.LicenseNumber
+        }
+      })
+        .then(response => {
+          alert("Form was submitted successfully");
+          this.$router.push('/')
+          return response
+    });
+  },
 }
 }
 </script>

@@ -13,7 +13,7 @@ const cors = require('cors')
 
 const app = express()
 app.use(session({
-  secret: 'dca', // changez cette valeur
+  secret: 'dca', 
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false } // ne changez que si vous avez activé le https
@@ -30,26 +30,27 @@ const users = [{
   password: 'dca',
   Firstname: 'admin',
   Lastname: 'admin',
-  telNumber: '0606060606',
-  licenceNumber: '999',
-  country: 'france'
+  phoneNumber: 0,
+  licenceNumber: 0,
+
 }]
 
 // LOGIN //
 app.post('/api/login', (req, res) => {
   if (!req.session.userId) {
+
     const user = users.find(u => u.username === req.body.email && u.password === req.body.password)
+    
     if (!user) {
       res.json({
         message: 'did not find any user with these credentials'
       })
       res.status(401)
     } else {
-      // connect to the user
       req.session.userId = user.username // connect to the user and change the id
       res.json({
         message: 'connected',
-        status: 200
+        status: 200,
       })
       res.status(200)
     }
@@ -71,19 +72,21 @@ app.get('/user/me', (req, res) => {
 
 // SUBSCRIBE //
 app.post('/api/subscribe', (req, res) => {
+
   const user = users.find(u => u.username === req.body.email)
+
   if (!user) {
     users.push({
       username: req.body.email,
       password: req.body.password,
       Firstname: req.body.Firstname,
       Lastname: req.body.Lastname,
-      telNumber: req.body.telNumber,
-      licenceNumber: req.body.licenceNumber,
+      phoneNumber: req.body.phoneNumber,
+      licenceNumber: req.body.LicenseNumber,
     })
     res.json({
-      message: 'Success'
-    })
+      message: 'Success',
+        })
   } else {
     res.json({
       message: 'An account with this user already exist'
