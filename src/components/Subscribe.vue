@@ -73,8 +73,16 @@
         required>
       </v-text-field>
 
+      <v-select
+          :items="items"
+          label="Niveau"
+          class="mt-5"
+          dense
+          v-model="Level"
+        ></v-select>
+
     <v-btn small  :disabled="!valid" color="green" @click="Submit">Enregistrer</v-btn>
-    <v-btn small  :disabled="!valid" class="mr-4" @click="reset">Clear </v-btn>
+    <v-btn small  class="mr-4" @click="reset">Clear </v-btn>
 
       
       <br><br>
@@ -92,6 +100,8 @@ export default {
     return {
       valid: true,
       url: 'http://localhost:8080',
+      Level:'',
+      items: ['Classe débutante', 'Classe intermédiaire', 'Classe découverte', 'Classe professionnel'],
       email: '',
       emailRules: [
         v => !!v || 'Veuillez renseigner votre e-mail',
@@ -150,7 +160,8 @@ export default {
           Lastname: this.Lastname,
           Firstname: this.Firstname,
           phoneNumber: this.phoneNumber,
-          LicenseNumber: this.LicenseNumber
+          LicenseNumber: this.LicenseNumber,
+          Level: this.Level
         }
       })
         .then(response => {

@@ -24,6 +24,7 @@ app.use(cors())
 const path = require('path')
 app.use(express.static(path.join(__dirname, 'dist/')))
 
+// ------------USERS------------//
 const users = [{
   // admin by default
   username: 'admin@esiea.fr',
@@ -32,10 +33,17 @@ const users = [{
   Lastname: 'admin',
   phoneNumber: 0,
   licenceNumber: 0,
-
 }]
 
-// LOGIN //
+app.get('/user/me', (req, res) => {
+  if (req.session.userId) {
+    res.send('ok')
+  } else {
+    res.status(401).send('not ok')
+  }
+})
+
+// ------------LOGIN------------//
 app.post('/api/login', (req, res) => {
   if (!req.session.userId) {
 
@@ -62,15 +70,7 @@ app.post('/api/login', (req, res) => {
   }
 })
 
-app.get('/user/me', (req, res) => {
-  if (req.session.userId) {
-    res.send('ok')
-  } else {
-    res.status(401).send('not ok')
-  }
-})
-
-// SUBSCRIBE //
+// ------------SUBSCRIBE------------//
 app.post('/api/subscribe', (req, res) => {
 
   const user = users.find(u => u.username === req.body.email)
@@ -83,14 +83,16 @@ app.post('/api/subscribe', (req, res) => {
       Lastname: req.body.Lastname,
       phoneNumber: req.body.phoneNumber,
       licenceNumber: req.body.LicenseNumber,
+      Level: req.body.Level
     })
     res.json({
       message: 'Success',
+
         })
   } else {
     res.json({
-      message: 'An account with this user already exist'
-    })
+      message: 'An account with this user already exist',
+     })
   }
 })
 

@@ -6,7 +6,6 @@
       max-width="600"
       tile
   >
-    
           <v-avatar
             class="profile"
             color="grey"
@@ -19,7 +18,7 @@
       <v-list-item two-line>
       <v-list-item-content>
         <v-list-item-title>{{name}} {{firstname}}</v-list-item-title>
-        <v-list-item-subtitle>Membre</v-list-item-subtitle>
+        <v-list-item-subtitle>{{Level}}</v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
 
@@ -110,6 +109,7 @@
       name: 'Name',
       firstname: 'Firstname',
       valid: true,
+      Level: 'Débutant',
       email: '',
       emailRules: [
         v => !!v || 'Veuillez renseigner votre e-mail',

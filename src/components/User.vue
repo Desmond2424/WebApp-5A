@@ -131,6 +131,13 @@
                         rounded
                         required>
                       </v-text-field>
+
+                    <v-select
+                      :items="items"
+                      v-model="editedItem.Level"
+                      label="Niveau"
+                      dense
+                    ></v-select>
                     </v-col>
                   </v-row>
         <v-card-actions>
@@ -183,6 +190,10 @@
     valid:true,
     search: '',
 
+    Level: '', 
+    items: ['Classe débutante', 'Classe intermédiaire', 'Classe découverte', 'Classe professionnel'],
+
+
     emailRules: [
         v => !!v || 'Veuillez renseigner votre e-mail',
         v => /.+@.+\..+/.test(v) || 'Veuillez respectez le format du courriel (exemple@domain.fr)'
@@ -231,6 +242,7 @@
       { text: 'E-mail', value: 'Mail' },
       { text: 'Téléphone', value: 'Téléphone' },
       { text: 'Licence', value: 'Licence' },
+      { text: 'Level', value: 'Level' },
       { text: 'Actions', value: 'actions', sortable: false },
     ],
 
@@ -244,6 +256,7 @@
       mail: '',
       Téléphone: 0.0,
       Licence: 0.0,
+      Level: ''
     },
     defaultItem: {
       Id: 0,
@@ -253,6 +266,7 @@
       mail: '',
       Téléphone: 0.0,
       Licence: 0.0,
+      Level: ''
     },
   }),
 
@@ -294,6 +308,7 @@
           Mail: "User1@esiea.fr",
           Téléphone: 0,
           Licence: 0,
+          Level: ''
         },
         {
           Id: 2,
@@ -303,6 +318,7 @@
           Mail: "User2@esiea.fr",
           Téléphone: 0,
           Licence: 0,
+          Level: ''
         },
       ]
     },
